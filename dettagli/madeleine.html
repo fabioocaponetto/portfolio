@@ -77,6 +77,71 @@
 
 
   <script>
+
+    const imagesToPreload = [
+      "img/dettagli/madeleine/foto1.webp",
+      "img/dettagli/madeleine/posizionamento.webp",
+      "img/dettagli/madeleine/dispenser2.webp",
+      "img/dettagli/madeleine/spiegazione.webp",
+      "img/dettagli/madeleine/dispenser1.webp",
+      "img/dettagli/madeleine/copertina.gif",
+      "img/dettagli/madeleine/prototipo.webp",
+      "img/dettagli/madeleine/cassa1.webp",
+      "img/dettagli/madeleine/definizione.webp",
+      "img/dettagli/madeleine/aromaterapia.webp",
+      "img/dettagli/madeleine/cassa2.webp",
+      "img/dettagli/madeleine/userjourney manuale.gif",
+      "img/dettagli/madeleine/userjourney.webp",
+      "img/dettagli/madeleine/esplosi.gif",
+      "img/dettagli/madeleine/sketch.webp",
+      "img/dettagli/madeleine/manuale.gif",
+      "img/dettagli/madeleine/arduino.webp",
+      "img/dettagli/madeleine/obbiettivi.gif",
+      "img/dettagli/madeleine/render.webp",
+      "img/dettagli/madeleine/mockup.mp4",
+    ];
+
+    const imagePaths = imagesToPreload.filter(path => !path.endsWith('.mp4'));
+    const videoPaths = imagesToPreload.filter(path => path.endsWith('.mp4'));
+
+    function preloadImages(imagePaths) {
+      const promises = imagePaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve(src);
+          img.onerror = () => reject(src);
+          img.src = src;
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    function preloadVideos(videoPaths) {
+      const promises = videoPaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const video = document.createElement('video');
+          video.preload = 'auto';
+          video.src = src;
+          video.onloadeddata = () => resolve(src);
+          video.onerror = () => reject(src);
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    Promise.all([
+      preloadImages(imagePaths),
+      preloadVideos(videoPaths)
+    ])
+      .then(() => {
+        console.log("✅ Tutte le risorse (immagini e video) sono state caricate.");
+      })
+      .catch((err) => {
+        console.warn("⚠️ Alcune risorse non sono state caricate:", err);
+      });
+
     document.querySelector("#header-text").addEventListener("click", () => {
       window.location.href = "../index.html#progetti";
       console.log("sono tornato indietro");
