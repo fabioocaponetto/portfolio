@@ -8,113 +8,11 @@ const imagesToPreload = [
   "img/spazi-indecisi.webp",
   "img/prato.webp",
   "img/madeleine.webp",
-  "img/dettagli/spaziindecisi/copertina.gif",
-  "img/dettagli/spaziindecisi/EXH_mostra_.gif",
-  "img/dettagli/spaziindecisi/video2.mp4",
-  "img/dettagli/spaziindecisi/foto.webp",
-  "img/dettagli/prato/copertina.gif",
-  "img/dettagli/prato/prato5.webp",
-  "img/dettagli/prato/prato4.webp",
-  "img/dettagli/prato/prato6.webp",
-  "img/dettagli/prato/prato7.webp",
-  "img/dettagli/prato/prato.webp",
-  "img/dettagli/prato/prato3.webp",
-  "img/dettagli/prato/prato2.webp",
-  "img/dettagli/prato/prato8.webp",
-  "img/dettagli/madeleine/foto1.webp",
-  "img/dettagli/madeleine/posizionamento.webp",
-  "img/dettagli/madeleine/dispenser2.webp",
-  "img/dettagli/madeleine/spiegazione.webp",
-  "img/dettagli/madeleine/dispenser1.webp",
-  "img/dettagli/madeleine/copertina.gif",
-  "img/dettagli/madeleine/prototipo.webp",
-  "img/dettagli/madeleine/cassa1.webp",
-  "img/dettagli/madeleine/definizione.webp",
-  "img/dettagli/madeleine/aromaterapia.webp",
-  "img/dettagli/madeleine/cassa2.webp",
-  "img/dettagli/madeleine/userjourney manuale.gif",
-  "img/dettagli/madeleine/userjourney.webp",
-  "img/dettagli/madeleine/esplosi.gif",
-  "img/dettagli/madeleine/sketch.webp",
-  "img/dettagli/madeleine/manuale.gif",
-  "img/dettagli/madeleine/arduino.webp",
-  "img/dettagli/madeleine/obbiettivi.gif",
-  "img/dettagli/madeleine/render.webp",
-  "img/dettagli/madeleine/mockup.mp4",
-  "img/dettagli/sulleondesbagliate/villaperelli.webp",
-  "img/dettagli/sulleondesbagliate/foto.gif",
-  "img/dettagli/sulleondesbagliate/teaser.mp4",
-  "img/dettagli/sulleondesbagliate/copertina.gif",
-  "img/dettagli/sulleondesbagliate/concept.gif",
-  "img/dettagli/sulleondesbagliate/installazione.mp4",
-  "img/dettagli/sulleondesbagliate/comunicazione2.webp",
-  "img/dettagli/sulleondesbagliate/comunicazione1.webp",
-  "img/dettagli/sulleondesbagliate/manifesto.webp",
-  "img/dettagli/sulleondesbagliate/interazione1.webp",
-  "img/dettagli/sulleondesbagliate/interazione2.webp",
-  "img/dettagli/sulleondesbagliate/exhibit.webp",
-  "img/dettagli/sulleondesbagliate/modello3d.gif",
-  "img/dettagli/sulleondesbagliate/experience journey.webp",
-  "img/dettagli/sulleondesbagliate/vista villa.webp",
-  "img/dettagli/sulleondesbagliate/citazionepapa.webp",
-  "img/dettagli/sulleondesbagliate/intro.gif",
-  "img/dettagli/sulleondesbagliate/uscita villa.webp",
-  "img/dettagli/sulleondesbagliate/entrata1.webp",
-  "img/dettagli/sulleondesbagliate/allestimento.gif",
-  "img/dettagli/sulleondesbagliate/entrata2.webp",
-  "img/dettagli/acquerisorgive/trailer.mp4",
-  "img/dettagli/acquerisorgive/copertina.gif",
-  "img/dettagli/acquerisorgive/acque-risorgive3.webp",
-  "img/dettagli/acquerisorgive/acque-risorgive2.webp",
-  "img/dettagli/acquerisorgive/acque-risorgive1.webp",
-  "img/dettagli/acquerisorgive/acque-risorgive5.webp",
-  "img/dettagli/acquerisorgive/acque-risorgive4.webp",
-  "img/dettagli/acquerisorgive/acque-risorgive6.webp",
-  "img/dettagli/resonance/lanyard.webp",
-  "img/dettagli/resonance/palette.webp",
-  "img/dettagli/resonance/luoghi.webp",
-  "img/dettagli/resonance/vario_logo.mp4",
-  "img/dettagli/resonance/slide_trailer.mp4",
-  "img/dettagli/resonance/pieghevole.mp4",
-  "img/dettagli/resonance/definizione.webp",
-  "img/dettagli/resonance/tipografia.webp",
-  "img/dettagli/resonance/biglietti.webp",
-  "img/dettagli/resonance/chiusura.mp4",
-  "img/dettagli/resonance/rocce.webp",
-  "img/dettagli/resonance/manifesto_digitale.mp4",
-  "img/dettagli/resonance/manifesti.gif",
-  "img/dettagli/synthesi/synthesi_video.mp4",
-  "img/dettagli/synthesi/video_sonificazione.mp4",
-  "img/dettagli/synthesi/copertina.gif",
-  "img/dettagli/synthesi/synthesi2.webp",
-  "img/dettagli/synthesi/pad_dati.mp4",
-  "img/dettagli/synthesi/synthesi3.webp",
-  "img/dettagli/synthesi/synthesi4.webp",
-  "img/dettagli/synthesi/synthesi5.webp",
-  "img/dettagli/synthesi/synthesi7.webp",
-  "img/dettagli/synthesi/synthesi6.webp",
-  "img/dettagli/synthesi/synthesi8.webp",
-  "img/dettagli/synthesi/synthesi.webp",
-  "img/dettagli/synthesi/dati_carotaggio.mp4",
-  "img/dettagli/synthesi/programmi.mp4",
-  "img/dettagli/synthesi/sito.mp4",
-  "img/dettagli/onemoredee/copertina.gif",
-  "img/dettagli/onemoredee/onemoredee8.webp",
-  "img/dettagli/onemoredee/onemoredee9.webp",
-  "img/dettagli/onemoredee/onemoredee2.webp",
-  "img/dettagli/onemoredee/onemoredee3.webp",
-  "img/dettagli/onemoredee/onemoredee12.webp",
-  "img/dettagli/onemoredee/onemoredee7.webp",
-  "img/dettagli/onemoredee/onemoredee6.webp",
-  "img/dettagli/onemoredee/onemoredee4.webp",
-  "img/dettagli/onemoredee/onemoredee11.webp",
-  "img/dettagli/onemoredee/onemoredee5.webp",
-  "img/dettagli/onemoredee/onemoredee10.webp",
-  "img/dettagli/onemoredee/onemoredee.webp",
   "img/synthesi.webp",
   "img/one-more-dee.webp",
   "img/fab.webp",
-  "img/IMG_0401.webp"
+  "img/IMG_0401.webp",
+  "videos/animazione_hobbies.mp4",
 ];
 
 const imagePaths = imagesToPreload.filter(path => !path.endsWith('.mp4'));
@@ -158,39 +56,50 @@ Promise.all([
     console.warn("⚠️ Alcune risorse non sono state caricate:", err);
   });
 
-
-const squares1 = document.querySelector('.square1');
-const squares2 = document.querySelector('.square2');
-const squares3 = document.querySelector('.square3');
-
-
-setTimeout(() => {
-    squares1.style.backgroundColor = '#ff5c00';
-    squares2.style.backgroundColor = 'black';
-    squares3.style.backgroundColor = 'black';
-}, 500);
-
-setTimeout(() => {
-    squares1.style.backgroundColor = '#ff5c00';
-    squares2.style.backgroundColor = '#ff5c00';
-    squares3.style.backgroundColor = 'black';
-}, 1000);
-
-setTimeout(() => {
-    squares1.style.backgroundColor = '#ff5c00';
-    squares2.style.backgroundColor = '#ff5c00';
-    squares3.style.backgroundColor = '#ff5c00';
-}, 1500);
-
-// Nascondi loader dopo 3.5 secondi
-setTimeout(() => {
+window.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById('loader');
-    loader.style.opacity = '0';
-    loader.style.transition = 'opacity 0.5s ease';
-    setTimeout(() => {
-        loader.style.display = 'none';
-    }, 300);
-}, 2000);
+    const hash = window.location.hash;
+
+    // Se l'utente è alla prima visita E NON sta atterrando su #progetti
+    if (hash !== "#progetti") {
+      const squares1 = document.querySelector('.square1');
+      const squares2 = document.querySelector('.square2');
+      const squares3 = document.querySelector('.square3');
+
+      setTimeout(() => {
+          squares1.style.backgroundColor = '#ff5c00';
+          squares2.style.backgroundColor = 'black';
+          squares3.style.backgroundColor = 'black';
+      }, 500);
+
+      setTimeout(() => {
+          squares1.style.backgroundColor = '#ff5c00';
+          squares2.style.backgroundColor = '#ff5c00';
+          squares3.style.backgroundColor = 'black';
+      }, 1000);
+
+      setTimeout(() => {
+          squares1.style.backgroundColor = '#ff5c00';
+          squares2.style.backgroundColor = '#ff5c00';
+          squares3.style.backgroundColor = '#ff5c00';
+      }, 1500);
+
+      // Nascondi loader dopo 2 secondi
+      setTimeout(() => {
+          loader.style.opacity = '0';
+          loader.style.transition = 'opacity 0.5s ease';
+          setTimeout(() => {
+              loader.style.display = 'none';
+          }, 500);
+      }, 2000);
+
+      localStorage.setItem("visited", "true");
+    } else {
+      // Nascondi subito il loader
+      loader.style.display = 'none';
+    }
+  });
+
 
 
 const revealImg = document.querySelector('.image-reveal img');
