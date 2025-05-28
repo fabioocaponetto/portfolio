@@ -12,6 +12,28 @@ html, body {
   font-family: "SF-Pro", sans-serif;
 }
 
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 9999;
+}
+    
+.square1, .square2, .square3 {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 45vh;
+    background-color: black;
+    transition: background-color 0.5s ease;
+    padding: 10px;
+}
   
 .home {
     background-image: url('img/IMG_0401.webp');
@@ -1029,7 +1051,7 @@ html, body {
     }
 
     .dati-anagrafici {
-        height: 25%;
+        height: 20%;
         width: 100%;
         flex-direction: row;
         border-bottom: 1px solid black;
@@ -1038,7 +1060,7 @@ html, body {
     .foto {
         height: 100%;
         width: 40%;
-        padding-top: 5rem;
+        padding-top: 4rem;
         border-right: 1px solid black;
         border-bottom: none;
     }
@@ -1046,7 +1068,7 @@ html, body {
     .dati-text {
         height: 100%;
         width: 60%;
-        padding-top: 5rem;
+        padding-top: 4rem;
         padding-right: 1rem;
     }
 
