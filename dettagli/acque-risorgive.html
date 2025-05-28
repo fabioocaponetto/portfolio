@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acque Risorgive - Projects Archive</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+    </style>
+</head>   
+<body id="body-project">
+    <div class="home-project">
+        <div class="header">
+            <span id="header-text">← BACK</span>
+            <span>ACQUE RISORGIVE - © 2025</span>
+        </div>
+
+        <div class="titolo-progetto">
+            <div>
+              <span id="titolo-text-progetto">ACQUE RISORGIVE</span>
+              <div id="nome-text-progetto">WEB APP CHE SPIEGA IL LAVORO DEL CONSORZIO DELLE ACQUE RISORGIVE TRAMITE LA DATA-VIZ<br><a href="https://fabioocaponetto.github.io/guida-acque-risorgive/" style="text-decoration: none; font-family: 'Source Code Pro', monospace; color: #1f18c0;">[IL SITO]</a></div>
+            </div>
+            <div id="credit-project">
+              FABIO CAPONETTO<br>
+              INFORMATION DESIGN LAB [2025] - INTERACTION AND EXPERIENCE DESIGN<br>
+              UNIVERSITÀ DEGLI STUDI DELLA REPUBBLICA DI SAN MARINO
+            </div>
+        </div>
+
+        <div class="copertina-progetto">
+          <img src="../img/dettagli/acquerisorgive/copertina.gif" alt="">
+        </div>
+    </div>
+
+    <div class="contenuti-project">
+        <div class="video-project"><a class="testo-contenuti-progetto">
+          Il sito valorizza il lavoro del Consorzio di Bonifica Acque Risorgive, attivo nel Veneto per la sicurezza idraulica e la tutela ambientale. L’obiettivo è offrire una panoramica chiara delle attività svolte, evidenziando l’impatto positivo sulla biodiversità.<br><br>
+
+          Oltre ai testi, il sito include visualizzazioni e immagini satellitari (Google Earth) che mostrano l’evoluzione del territorio prima e dopo gli interventi di riqualificazione. Le aree rinaturalizzate ospitano oggi numerose specie, documentate anche grazie ai cittadini tramite la piattaforma iNaturalist.<br><br>
+
+          Basato sulla “Guida alle oasi naturalistiche” (2018) e sul “Bilancio Ambientale” (2024), il sito propone contenuti divulgativi e interattivi, pensati per informare, incuriosire e stimolare una maggiore consapevolezza ambientale.</a>
+      </div>
+
+      <div class="video-project">
+        <video src="../img/dettagli/acquerisorgive/trailer.mp4" controls loop playsinline style="border: 1px solid black;"></video>
+      </div>
+
+      <div id="img-project">
+        <img src="../img/dettagli/acquerisorgive/acque-risorgive1.webp" alt="">
+        <img src="../img/dettagli/acquerisorgive/acque-risorgive2.webp" alt="">
+        <img src="../img/dettagli/acquerisorgive/acque-risorgive3.webp" alt="">
+        <img src="../img/dettagli/acquerisorgive/acque-risorgive4.webp" alt="">
+        <img src="../img/dettagli/acquerisorgive/acque-risorgive5.webp" alt="">
+        <img src="../img/dettagli/acquerisorgive/acque-risorgive6.webp" alt="">
+      </div>
+
+
+
+      <div class="torna-su">
+        <span>↑</span>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  <script>
+    document.querySelector("#header-text").addEventListener("click", () => {
+      window.location.href = "../index.html#progetti";
+      console.log("sono tornato indietro");
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("body-project").style.backgroundColor = "#f7f7f7";
+
+      const titolo = document.getElementById("titolo-text-progetto");
+      titolo.style.backgroundColor = "#e0e73f";
+      titolo.style.color = "black";
+    });
+
+    const videos = document.querySelectorAll(".video-project video");
+
+      videos.forEach(video => {
+        let hasPlayedOnce = false;
+        let fadeInterval = null;
+
+        function fadeVolume(targetVolume, callback) {
+          clearInterval(fadeInterval);
+          fadeInterval = setInterval(() => {
+            const step = 0.05;
+            if (Math.abs(video.volume - targetVolume) <= step) {
+              video.volume = targetVolume;
+              clearInterval(fadeInterval);
+              if (callback) callback();
+            } else {
+              video.volume += (video.volume < targetVolume ? step : -step);
+              video.volume = Math.max(0, Math.min(1, video.volume));
+            }
+          }, 75);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (!hasPlayedOnce) {
+                hasPlayedOnce = true;
+                video.volume = 0;
+                video.play();
+                fadeVolume(1);
+              } else {
+                video.play();
+                fadeVolume(1);
+              }
+            } else {
+              fadeVolume(0, () => video.pause());
+            }
+          });
+        }, {
+          threshold: 0.2
+        });
+
+        observer.observe(video);
+      });
+
+    // Torna su logic
+    const contenuti = document.querySelector('.contenuti-project');
+    const tornaSu = document.querySelector('.torna-su');
+
+    // Mostra il bottone quando contenuti-project tocca top:0
+    window.addEventListener('scroll', () => {
+      const rect = contenuti.getBoundingClientRect();
+      if (rect.top <= 0) {
+        tornaSu.classList.add('visible');
+      } else {
+        tornaSu.classList.remove('visible');
+      }
+    });
+
+    // Scrolla in cima alla pagina al clic
+    tornaSu.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelector(".torna-su").addEventListener('mouseenter', () => {
+      document.querySelector(".torna-su").style.backgroundColor = "#e0e73f";
+      document.querySelector(".torna-su").style.color = "black";
+    });
+
+    document.querySelector(".torna-su").addEventListener('mouseleave', () => {
+      document.querySelector(".torna-su").style.backgroundColor = "#f7f7f7";
+      document.querySelector(".torna-su").style.color = "black";
+    });
+
+
+  </script>
+</body>
+</html>

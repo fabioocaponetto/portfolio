@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Archivio Progetti</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="home" id="home">
+        <div class="header">
+            <span id="header-text">FABIO CAPONETTO</span>
+            <span>INTERACTION DESIGNER - © 2025</span>
+        </div>
+
+        <div class="titolo">
+            <span id="titolo-text">ARCHIVIO PROGETTI</span>
+            <div id="nome-text">CIAO, SONO FABIO CAPONETTO – BENVENUTO NEL MIO ARCHIVIO DIGITALE.</div>
+        </div>
+
+        <div class="info-home">
+            <div class="nome-home">
+                <div></div>
+            </div>
+            <div class="home-button">
+                <div><u id="button" data-label="chi sono">CHI SONO</u></div>
+                <div><u id="button" data-label="vedi progetti">VEDI PROGETTI</u></div>
+                <div><u id="button" data-label="contatti">CONTATTI</u></div>
+            </div>
+        </div>
+
+        <div class="image-reveal">
+            <img src="img/IMG_0401_col.webp" alt="hidden layer">
+            <div class="mask"></div>
+        </div>
+    </div>
+
+    <div class="about-me" data-label="chi sono" id="about-me">
+        <div class="header-about">
+          <span id="header-text">CHI SONO</span>
+        </div>
+      
+        <div class="content-about">
+            <div class="about-text">
+                TROVO SODDISFACENTE IL PROCESSO CHE PRECEDE LA REALIZZAZIONE DI UN PROGETTO, CHE SIA FISICO O DIGITALE. MI PIACE FAR CONVIVERE MONDI DIVERSI DEL DESIGN IN UN UNICO SPAZIO.
+              </div>
+            
+              <div class="info-about">
+                <div class="more-info"><span>[INFO]</span></div>
+                <div class="hobbies"><span>[ESPLORA I MIEI HOBBY]</span></div>
+              </div>
+        </div>
+      
+        <div class="overlay">
+            <div class="overlay-content">
+                <div class="dati-anagrafici">
+                    <div class="foto">
+                        <img src="img/fab.webp" alt="">
+                    </div>
+                    <div class="dati-text">
+                        FABIO<br>
+                        CAPONETTO<br>
+                        14-12-1999 BOLOGNA (BO)<br>
+                        VIVO A PRATO (59100) -<br>TOSCANA, ITALIA
+                    </div>
+                </div>
+
+                <div class="info-curriculum">
+                    <div class="curriculum">
+                        <div class="experience">
+                            <u>ESPERIENZE</u><br>
+                            Dopo le superiori ho lavorato per 5 anni come perito meccanico per aziende come Baker Hughes e IMA S.P.A., sviluppando soprattutto competenze tecniche e digitali. In parallelo ho iniziato a studiare Disegno Industriale, scoprendo quanto il mondo meccanico e quello del design siano più vicini di quanto pensassi.<br><br>
+                            2017-2023 GDS srl<br>
+                            / 2018-2020 Baker Huges / 2020-2023 IMA S.P.A. <br>
+                            2022-2023 Laboratorio Modelli UNIFI <br>
+                        </div>
+                        <div class="formation">
+                            <u>FORMAZIONE</u><br>
+                            2018-2023
+                            Laurea triennale in Disegno Industriale [110L]<br>
+                            / Università degli Studi di Firenze <br>
+                            2023-
+                            Magistrale in Interaction and Experience Design <br>
+                            / Università degli studi della Repubblica di San Marino
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <u>SKILLS</u> <br>
+                        Digital Illustration Tools <br>
+                        3D Modelling <br>
+                        Data Visualization <br>
+                        Basic Coding (HTML, JS, CSS) <br>
+                        Digital and Physical Prototyping Processes<br>
+                        3D Printing and Arduino
+                    </div>
+                </div>
+
+                <span id="close-overlay">[CHIUDI]</span>
+            </div>
+        </div>
+
+        <div class="overlay-hobbies">
+            <div class="overlay-hobbies-content">
+
+                <div id="istr-video">
+                    <span>TIENI PREMUTA LA "SPACE-BAR" E ALZA IL VOLUME</span>
+                </div>
+
+                <video id="video-hobbies" src="videos/animazione_hobbies.mp4" preload="auto" muted loop playsinline></video>
+                <audio id="music-hobbies" src="sound/musica_hobbies.mp3" loop></audio>
+
+                <span id="credit-music">Musica: “Wide Open” dei The Chemical Brothers - 2015.<br><em>This is a non-commercial project. Music is used for educational/portfolio purposes only.</em></span>
+                <span id="close-hobbies-overlay">[CHIUDI]</span>
+            </div>
+        </div>
+
+    </div>
+      
+
+    <div class="progetti" data-label="vedi progetti" id="progetti">
+        <div class="header-progetti">
+            <span id="header-text">PROGETTI</span>
+        </div>
+
+        <div class="scelta-ambito">
+            <div class="all-progetti scelta">ALL</div>
+            <div class="product scelta">PRODUCT</div>
+            <div class="digital scelta">MEDIA</div>
+            <div class="exhibit scelta">EXPERIENCE</div>
+        </div>
+
+        <div class="box-progetti"></div>
+    </div>
+
+    <div class="contatti" data-label="contatti">
+        <div class="header-contatti">
+            <span id="header-text">CONTATTI</span>
+        </div>
+
+        <div class="contenuto-footer">
+            <div class="footer-nome">FABIO CAPONETTO</div>
+            <div class="footer-contatti">CONTATTI
+                <div id="contatti-link">
+                    <a href="mailto:capo.fabio14@gmail.com">CAPO.FABIO14@GMAIL.COM</a><br><br><a href="tel:+393342335745">+39 3342335745</a><br><br><a href="https://www.behance.net/fabiocaponetto">↘ BEHANCE</a><br><br><a href="https://www.instagram.com/fabioocaponetto/?next=%2F">↘ INSTAGRAM</a><br><br><a href="https://github.com/fabioocaponetto">↘ GIT-HUB</a>
+                </div>
+            </div>
+            <div class="footer-sezioni"><a href="#home">HOME</a><br><br><a href="#about-me">CHI SONO</a><br><br><a href="#progetti">VEDI PROGETTI</a></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>    
+</body>
+</html>
