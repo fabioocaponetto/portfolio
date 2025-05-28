@@ -159,6 +159,40 @@ Promise.all([
   });
 
 
+const squares1 = document.querySelector('.square1');
+const squares2 = document.querySelector('.square2');
+const squares3 = document.querySelector('.square3');
+
+
+setTimeout(() => {
+    squares1.style.backgroundColor = '#ff5c00';
+    squares2.style.backgroundColor = 'black';
+    squares3.style.backgroundColor = 'black';
+}, 500);
+
+setTimeout(() => {
+    squares1.style.backgroundColor = '#ff5c00';
+    squares2.style.backgroundColor = '#ff5c00';
+    squares3.style.backgroundColor = 'black';
+}, 1000);
+
+setTimeout(() => {
+    squares1.style.backgroundColor = '#ff5c00';
+    squares2.style.backgroundColor = '#ff5c00';
+    squares3.style.backgroundColor = '#ff5c00';
+}, 1500);
+
+// Nascondi loader dopo 3.5 secondi
+setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    loader.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+        loader.style.display = 'none';
+    }, 300);
+}, 2000);
+
+
 const revealImg = document.querySelector('.image-reveal img');
 const rectSize = 200;
 
@@ -408,16 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
         div.addEventListener('click', () => {
           const path = `dettagli/${project.tit_breve.toLowerCase()}.html`;
           window.location.href = path;
-
-          div.querySelector(".info-progetto").style.backgroundImage = ``;
-          div.querySelector("#titolo-info-progetto").style.backgroundColor = "";
-          div.querySelector("#titolo-info-progetto").style.color = "black";
-          div.querySelector("#descrizione-info-progetto").style.backgroundColor = "";
-          div.querySelector("#descrizione-info-progetto").style.color = "black";
-          div.querySelector("#anno-info-progetto").style.backgroundColor = "";
-          div.querySelector("#anno-info-progetto").style.color = "black";
-          div.querySelector("#freccia-info-progetto").style.backgroundColor = "";
-          div.querySelector("#freccia-info-progetto").style.color = "black";
         });
 
         div.addEventListener('mouseenter', () => {
@@ -500,6 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
             descrizione.style.opacity = 1;
             anno.style.opacity = 1;
             moreInfo.style.opacity = 1;
+            project.style.pointerEvents = "all";
 
             if (isSmallScreen) {
               project.style.pointerEvents = "all";
