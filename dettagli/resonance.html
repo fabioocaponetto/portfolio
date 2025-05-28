@@ -88,6 +88,63 @@
 
 
   <script>
+    const imagesToPreload = [
+      "img/dettagli/resonance/lanyard.webp",
+      "img/dettagli/resonance/palette.webp",
+      "img/dettagli/resonance/luoghi.webp",
+      "img/dettagli/resonance/vario_logo.mp4",
+      "img/dettagli/resonance/slide_trailer.mp4",
+      "img/dettagli/resonance/pieghevole.mp4",
+      "img/dettagli/resonance/definizione.webp",
+      "img/dettagli/resonance/tipografia.webp",
+      "img/dettagli/resonance/biglietti.webp",
+      "img/dettagli/resonance/chiusura.mp4",
+      "img/dettagli/resonance/rocce.webp",
+      "img/dettagli/resonance/manifesto_digitale.mp4",
+      "img/dettagli/resonance/manifesti.gif",
+    ];
+
+    const imagePaths = imagesToPreload.filter(path => !path.endsWith('.mp4'));
+    const videoPaths = imagesToPreload.filter(path => path.endsWith('.mp4'));
+
+    function preloadImages(imagePaths) {
+      const promises = imagePaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve(src);
+          img.onerror = () => reject(src);
+          img.src = src;
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    function preloadVideos(videoPaths) {
+      const promises = videoPaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const video = document.createElement('video');
+          video.preload = 'auto';
+          video.src = src;
+          video.onloadeddata = () => resolve(src);
+          video.onerror = () => reject(src);
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    Promise.all([
+      preloadImages(imagePaths),
+      preloadVideos(videoPaths)
+    ])
+      .then(() => {
+        console.log("✅ Tutte le risorse (immagini e video) sono state caricate.");
+      })
+      .catch((err) => {
+        console.warn("⚠️ Alcune risorse non sono state caricate:", err);
+      });
+
     document.querySelector("#header-text").addEventListener("click", () => {
       window.location.href = "../index.html#progetti";
       console.log("sono tornato indietro");
