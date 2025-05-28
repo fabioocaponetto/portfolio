@@ -98,6 +98,65 @@
 
 
   <script>
+    const imagesToPreload = [
+      "img/dettagli/synthesi/synthesi_video.mp4",
+      "img/dettagli/synthesi/video_sonificazione.mp4",
+      "img/dettagli/synthesi/copertina.gif",
+      "img/dettagli/synthesi/synthesi2.webp",
+      "img/dettagli/synthesi/pad_dati.mp4",
+      "img/dettagli/synthesi/synthesi3.webp",
+      "img/dettagli/synthesi/synthesi4.webp",
+      "img/dettagli/synthesi/synthesi5.webp",
+      "img/dettagli/synthesi/synthesi7.webp",
+      "img/dettagli/synthesi/synthesi6.webp",
+      "img/dettagli/synthesi/synthesi8.webp",
+      "img/dettagli/synthesi/synthesi.webp",
+      "img/dettagli/synthesi/dati_carotaggio.mp4",
+      "img/dettagli/synthesi/programmi.mp4",
+      "img/dettagli/synthesi/sito.mp4",
+    ];
+
+    const imagePaths = imagesToPreload.filter(path => !path.endsWith('.mp4'));
+    const videoPaths = imagesToPreload.filter(path => path.endsWith('.mp4'));
+
+    function preloadImages(imagePaths) {
+      const promises = imagePaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve(src);
+          img.onerror = () => reject(src);
+          img.src = src;
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    function preloadVideos(videoPaths) {
+      const promises = videoPaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const video = document.createElement('video');
+          video.preload = 'auto';
+          video.src = src;
+          video.onloadeddata = () => resolve(src);
+          video.onerror = () => reject(src);
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    Promise.all([
+      preloadImages(imagePaths),
+      preloadVideos(videoPaths)
+    ])
+      .then(() => {
+        console.log("✅ Tutte le risorse (immagini e video) sono state caricate.");
+      })
+      .catch((err) => {
+        console.warn("⚠️ Alcune risorse non sono state caricate:", err);
+      });
+
     document.querySelector("#header-text").addEventListener("click", () => {
       window.location.href = "../index.html#progetti";
       console.log("sono tornato indietro");
