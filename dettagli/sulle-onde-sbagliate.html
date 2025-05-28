@@ -88,6 +88,71 @@
 
 
   <script>
+    const imagesToPreload = [
+      "img/dettagli/sulleondesbagliate/villaperelli.webp",
+      "img/dettagli/sulleondesbagliate/foto.gif",
+      "img/dettagli/sulleondesbagliate/teaser.mp4",
+      "img/dettagli/sulleondesbagliate/copertina.gif",
+      "img/dettagli/sulleondesbagliate/concept.gif",
+      "img/dettagli/sulleondesbagliate/installazione.mp4",
+      "img/dettagli/sulleondesbagliate/comunicazione2.webp",
+      "img/dettagli/sulleondesbagliate/comunicazione1.webp",
+      "img/dettagli/sulleondesbagliate/manifesto.webp",
+      "img/dettagli/sulleondesbagliate/interazione1.webp",
+      "img/dettagli/sulleondesbagliate/interazione2.webp",
+      "img/dettagli/sulleondesbagliate/exhibit.webp",
+      "img/dettagli/sulleondesbagliate/modello3d.gif",
+      "img/dettagli/sulleondesbagliate/experience journey.webp",
+      "img/dettagli/sulleondesbagliate/vista villa.webp",
+      "img/dettagli/sulleondesbagliate/citazionepapa.webp",
+      "img/dettagli/sulleondesbagliate/intro.gif",
+      "img/dettagli/sulleondesbagliate/uscita villa.webp",
+      "img/dettagli/sulleondesbagliate/entrata1.webp",
+      "img/dettagli/sulleondesbagliate/allestimento.gif",
+      "img/dettagli/sulleondesbagliate/entrata2.webp",
+    ];
+
+    const imagePaths = imagesToPreload.filter(path => !path.endsWith('.mp4'));
+    const videoPaths = imagesToPreload.filter(path => path.endsWith('.mp4'));
+
+    function preloadImages(imagePaths) {
+      const promises = imagePaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve(src);
+          img.onerror = () => reject(src);
+          img.src = src;
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    function preloadVideos(videoPaths) {
+      const promises = videoPaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const video = document.createElement('video');
+          video.preload = 'auto';
+          video.src = src;
+          video.onloadeddata = () => resolve(src);
+          video.onerror = () => reject(src);
+        });
+      });
+
+      return Promise.all(promises);
+    }
+
+    Promise.all([
+      preloadImages(imagePaths),
+      preloadVideos(videoPaths)
+    ])
+      .then(() => {
+        console.log("✅ Tutte le risorse (immagini e video) sono state caricate.");
+      })
+      .catch((err) => {
+        console.warn("⚠️ Alcune risorse non sono state caricate:", err);
+      });
+
     document.querySelector("#header-text").addEventListener("click", () => {
       window.location.href = "../index.html#progetti";
       console.log("sono tornato indietro");
