@@ -1060,7 +1060,7 @@ html, body {
     .foto {
         height: 100%;
         width: 40%;
-        padding-top: 4rem;
+        padding-top: 3rem;
         border-right: 1px solid black;
         border-bottom: none;
     }
@@ -1068,7 +1068,7 @@ html, body {
     .dati-text {
         height: 100%;
         width: 60%;
-        padding-top: 4rem;
+        padding-top: 3rem;
         padding-right: 1rem;
     }
 
