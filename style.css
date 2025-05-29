@@ -1223,3 +1223,30 @@ html, body {
       padding-top: 0.5rem;
     }
   }
+
+  /*-------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Mobile (fino a 361) */
+
+.header {
+  font-size: 0.6rem;
+  padding: 0.5rem 1rem;
+
+}
+
+.dati-text {
+  padding-top: 4rem;
+  font-size: 0.6rem;
+}
+
+.experience, .formation, .skills {
+  font-size: 0.7rem;
+}
+
+#video-hobbies {
+  top: 3rem;
+}
+
+#istr-video {
+  font-size: 0.7rem;
+}
