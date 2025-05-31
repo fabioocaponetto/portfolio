@@ -131,6 +131,12 @@
       console.log("sono tornato indietro");
     });
 
+    // Gestione del pulsante "indietro" del browser
+    window.addEventListener("popstate", (event) => {
+      // Esegui il redirect se torniamo indietro a questa pagina
+      window.location.href = "../index.html#progetti";
+      console.log("Torno a index#progetti con tasto indietro del browser");
+    });
 
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("body-project").style.backgroundColor = "#f7f7f7";
