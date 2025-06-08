@@ -292,6 +292,7 @@ html, body {
     padding-top: 4rem;
     padding-left: 1rem;
     padding-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 .info-curriculum {
@@ -300,10 +301,11 @@ html, body {
     position: relative;
     display: flex;
     flex-direction: row;
+    font-size: 0.9rem;
 }
 
 .curriculum {
-    width: 50%;
+    width: 66%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -315,8 +317,10 @@ html, body {
     border-bottom: 1px solid black;
 }
 
-.experience, .formation {
+.experience, .formation, .exhibition, .riconoscimenti, .workshop {
     padding: 1rem;
+    padding-right: 3rem;
+    border-bottom: 1px black solid;
 }
 
 .experience {
@@ -325,7 +329,7 @@ html, body {
 
 
 .skills {
-    width: 50%;
+    width: 33%;
     height: 100%;
     padding: 1rem;
 }
@@ -795,17 +799,16 @@ html, body {
 
     .dati-anagrafici {
         height: 100%;
-        flex-direction: column;
-        width: 20%;
-        border-bottom: none;
-        border-right: 1px solid black;
+        flex-direction: row;
+        width: 100%;
+        border-bottom: 1px solid black;
     }
 
     .foto {
-        width: 100%;
+        width: 20%;
         height: 40%;
         border-right: none;
-        border-bottom: 1px solid black;
+        border-right: 1px solid black;
         padding-top: 3rem;
     }
 
@@ -819,7 +822,7 @@ html, body {
     .dati-text {
         width: 100%;
         height: 60%;
-        padding-top: 1rem;
+        padding-top: 3rem;
         font-size: 0.6rem;
     }
 
@@ -829,16 +832,23 @@ html, body {
     }
 
     .curriculum {
-        width: 60%;
+        width: 80%;
         height: 100%;
+        font-size: 0.7rem;
+    }
+
+    .experience, .formation, .workshop, .riconoscimenti, .exhibition {
+      padding-right: 1rem;
     }
 
     .experience {
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
 
     .skills {
-        padding-top: 3rem;
+        width: 20%;
+        padding-top: 1rem;
+        font-size: 0.7rem;
     }
 
     #close-overlay, #close-hobbies-overlay {
@@ -1042,6 +1052,8 @@ html, body {
     .curriculum {
         flex-direction: column;
         width: 100%;
+        font-size: 0.7rem;
+        border-right: none;
     }
 
     .info-curriculum {
@@ -1070,6 +1082,7 @@ html, body {
         width: 60%;
         padding-top: 3rem;
         padding-right: 1rem;
+        font-size: 0.6rem;
     }
 
     .curriculum {
@@ -1088,6 +1101,8 @@ html, body {
     .skills {
         width: 100%;
         padding-top: 1rem;
+        font-size: 0.7rem;
+        padding-bottom: 3rem;
     }
 
     #close-overlay, #close-hobbies-overlay {
@@ -1118,6 +1133,10 @@ html, body {
 
     #video-hobbies {
       top: 4rem;
+    }
+
+    #credit-music {
+      font-size: 0.45rem;
     }
 
     #istr-video {
@@ -1229,18 +1248,18 @@ html, body {
 /* Mobile (fino a 360px) */
 @media (max-width: 361px) {
   .header {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     padding: 0.5rem 1rem;
 
   }
 
   .dati-text {
     padding-top: 3rem;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
 
-  .experience, .formation, .skills {
-    font-size: 0.7rem;
+  .experience, .formation, .skills, .exhibition, .riconoscimenti {
+    font-size: 0.6rem;
   }
 
   #video-hobbies {
@@ -1251,3 +1270,6 @@ html, body {
     font-size: 0.7rem;
   }
 }
+
+
+
