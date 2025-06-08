@@ -59,9 +59,10 @@ Promise.all([
 window.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById('loader');
     const hash = window.location.hash;
+    const isHashExcluded = hash === "#progetti" || hash === "#about-me";
 
     // Se l'utente è alla prima visita E NON sta atterrando su #progetti
-    if (hash !== "#progetti") {
+    if (!isHashExcluded) {
       const squares1 = document.querySelector('.square1');
       const squares2 = document.querySelector('.square2');
       const squares3 = document.querySelector('.square3');
@@ -198,20 +199,9 @@ function enableScroll() {
     document.body.style.overflow = '';
 }
 
-//mostra overlay
 moreInfo.addEventListener('click', (e) => {
-  e.stopPropagation();
-
-  aboutMe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  overlay.style.visibility = "visible";
-//   overlayContent.style.visibility = "visible";
-  overlay.classList.add('active');
-  disableScroll();
-
-  setTimeout(() => {
-    overlayContent.style.visibility = "visible";
-  }, 500);
+  e.preventDefault(); // se è un link <a>, evita comportamento di default
+  window.location.href = 'dettagli/curriculum.html';
 });
 
 //nasconde overlay cliccando "close"
@@ -351,6 +341,17 @@ document.addEventListener('DOMContentLoaded', () => {
         div.addEventListener('click', () => {
           const path = `dettagli/${project.tit_breve.toLowerCase()}.html`;
           window.location.href = path;
+
+          div.querySelector(".info-progetto").style.backgroundImage = ``;
+          div.querySelector("#titolo-info-progetto").style.backgroundColor = "";
+          div.querySelector("#titolo-info-progetto").style.color = "black";
+          div.querySelector("#descrizione-info-progetto").style.backgroundColor = "";
+          div.querySelector("#descrizione-info-progetto").style.color = "black";
+          div.querySelector("#anno-info-progetto").style.backgroundColor = "";
+          div.querySelector("#anno-info-progetto").style.color = "black";
+          div.querySelector("#freccia-info-progetto").style.backgroundColor = "";
+          div.querySelector("#freccia-info-progetto").style.color = "black";
+
         });
 
         div.addEventListener('mouseenter', () => {
