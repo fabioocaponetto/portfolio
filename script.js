@@ -204,14 +204,6 @@ moreInfo.addEventListener('click', (e) => {
   window.location.href = 'dettagli/curriculum.html';
 });
 
-//nasconde overlay cliccando "close"
-closeOverlay.addEventListener('click', () => {
-  overlayContent.style.visibility = "hidden";
-  overlay.style.visibility = "hidden";
-  overlay.classList.remove('active');
-  enableScroll();
-});
-
 // Mostra overlay "Hobbies"
 hobbies.addEventListener('click', (e) => {
   e.stopPropagation();
