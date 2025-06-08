@@ -16,6 +16,12 @@
     </style>
 </head>   
 <body id="body-project">
+      <div id="loader">
+        <div class="square1"></div>
+        <div class="square2"></div>
+        <div class="square3"></div>
+    </div>
+
         <div class="header">
             <span id="header-text">← BACK</span>
             <span>CURRICULUM VITAE - © 2025</span>
@@ -132,6 +138,41 @@
       </div>
 
   <script>
+    window.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById('loader');
+
+      const squares1 = document.querySelector('.square1');
+      const squares2 = document.querySelector('.square2');
+      const squares3 = document.querySelector('.square3');
+
+      setTimeout(() => {
+          squares1.style.backgroundColor = '#1f18c0';
+          squares2.style.backgroundColor = 'black';
+          squares3.style.backgroundColor = 'black';
+      }, 300);
+
+      setTimeout(() => {
+          squares1.style.backgroundColor = '#1f18c0';
+          squares2.style.backgroundColor = '#1f18c0';
+          squares3.style.backgroundColor = 'black';
+      }, 600);
+
+      setTimeout(() => {
+          squares1.style.backgroundColor = '#1f18c0';
+          squares2.style.backgroundColor = '#1f18c0';
+          squares3.style.backgroundColor = '#1f18c0';
+      }, 900);
+
+      // Nascondi loader dopo 2 secondi
+      setTimeout(() => {
+          loader.style.opacity = '0';
+          loader.style.transition = 'opacity 0.5s ease';
+          setTimeout(() => {
+              loader.style.display = 'none';
+          }, 300);
+      }, 1200);  
+  });
+
 
     document.querySelector("#header-text").addEventListener("click", () => {
       window.location.href = "../index.html#about-me";
@@ -161,7 +202,7 @@
     });
 
     document.querySelector(".torna-su").addEventListener('mouseenter', () => {
-      document.querySelector(".torna-su").style.backgroundColor = "black";
+      document.querySelector(".torna-su").style.backgroundColor = "#1f18c0";
       document.querySelector(".torna-su").style.color = "#f7f7f7";
     });
 
