@@ -663,7 +663,6 @@ html, body {
       height: 100vh;
     }
 
-
     .about-text {
       width: 70%;
       font-size: 2rem;
@@ -692,7 +691,7 @@ html, body {
     }
 
     .foto {
-        padding-top: 7rem;
+        padding-top: 4rem;
         padding-right: 1rem;
     }
 
@@ -704,7 +703,7 @@ html, body {
     }
 
     .dati-text {
-        padding-top: 7rem;
+        padding-top: 4rem;
     }
 
     .experience {
@@ -717,7 +716,7 @@ html, body {
 
     .home-project {
       height: 90vh;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: space-between;
       gap: 2%;
     }
@@ -725,16 +724,16 @@ html, body {
     .titolo-progetto {
       width: 100%;
       justify-content: space-between;
-      gap: 2rem;
-      height: 30%;
+      height: 100%;
+      padding-bottom: 4rem;
     }
 
     .copertina-progetto {
       width: 100%;
-      height: 68%;
+      height: 100%;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 0;
+      padding-top: 4rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -763,7 +762,7 @@ html, body {
     }
 
     .about-text {
-      width: 70%;
+      width: 80%;
       font-size: 1.5rem;
     }
   
@@ -803,7 +802,7 @@ html, body {
     }
 
     .overlay-content, .overlay-hobbies-content {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         flex-direction: row;
     }
 
@@ -833,18 +832,18 @@ html, body {
         width: 100%;
         height: 60%;
         padding-top: 3rem;
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
 
     .info-curriculum {
-        width: 80%;
+        width: 90%;
         height: 100%;
     }
 
     .curriculum {
         width: 80%;
         height: 100%;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .experience, .formation, .workshop, .riconoscimenti, .exhibition {
@@ -856,9 +855,9 @@ html, body {
     }
 
     .skills {
-        width: 20%;
+        width: 40%;
         padding-top: 1rem;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     #close-overlay, #close-hobbies-overlay {
@@ -895,18 +894,18 @@ html, body {
 
     #istr-video {
       width: 50%;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       margin-top: 3rem;
     }
 
     #credit-music {
-      font-size: 0.4rem;
-      bottom: 0.75rem;
+      font-size: 0.6rem;
+      bottom: 4rem;
     }
 
     .home-project {
       width: 100%;
-      height: 90vh;
+      height: 50vh;
       position: relative;
       display: flex;
       flex-direction: row;
@@ -916,7 +915,7 @@ html, body {
     }
 
     .titolo-progetto {
-      width: 65%;
+      width: 50%;
       height: auto;
       position: relative;
       padding: 0rem 1rem;
@@ -928,7 +927,7 @@ html, body {
     }
 
     .copertina-progetto {
-      width: 35%;
+      width: 50%;
       height: 100%;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -953,18 +952,18 @@ html, body {
     }
 
     #nome-text-progetto {
-      width: 70%;
+      width: 100%;
       font-size: 1rem;
       color: black;
     }
 
     #credit-project {
       font-family: "Source Code Pro", monospace;
-      font-size: 0.4rem;
+      font-size: 0.55rem;
     }
 
     .testo-contenuti-progetto {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
 
     .torna-su {
@@ -983,21 +982,21 @@ html, body {
     }
 
     .footer-nome, .footer-contatti,.footer-sezioni {
-      width: 25%;
+      width: 33%;
     }
 
     .footer-nome, .footer-contatti {
-      font-size: 1rem;
+      font-size: 1.3rem;
       color: #f7f7f7;
     }
 
     #contatti-link {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       margin-top: 1rem;
     }
 
     .footer-sezioni {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       padding-top: 0.5rem;
     }
 }
@@ -1005,7 +1004,7 @@ html, body {
 /*-------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Mobile (fino a 768px) */
-@media (max-width: 950px) {
+@media (max-width: 768px) {
 
     .home {
       height: 100svh;
