@@ -17,14 +17,33 @@ html, body {
 }
 
 html, body {
-  scroll-snap-type: y mandatory; /* o proximity se ti sembra troppo aggressivo */
+  scroll-behavior: smooth;
+  color: black;
+  background-color: #f7f7f7;
+  font-family: "SF-Pro", sans-serif;
+  /* niente scroll-snap qui di default */
 }
 
+/* Sezioni che possono fare snap (valido per tutti) */
 .home,
 .about-me,
 .progetti {
-  scroll-snap-align: start;  /* si allinea in alto */
-  scroll-snap-stop: always;  /* forza lo snap, non salta due sezioni in un colpo */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* 🖥 Desktop: snap forte */
+@media (min-width: 1024px) {
+  html, body {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+/* 📱 Mobile: snap morbido */
+@media (max-width: 1023px) {
+  html, body {
+    scroll-snap-type: y proximity;
+  }
 }
 
 #loader {
@@ -1053,12 +1072,6 @@ html, body {
 
 /* Mobile (fino a 768px) */
 @media (max-width: 768px) {
-
-    html, body {
-      scroll-snap-type: y mandatory;
-      scroll-padding-top: 0rem;
-    }
-
     :root {
       --header-height: 2.6rem; /* esempio, se vuoi un header un filo più basso */
     }
