@@ -32,14 +32,29 @@ html, body {
   scroll-snap-stop: always;
 }
 
-/* 🖥 Desktop: snap forte */
+/*Contenuti principali nascosti finché il loader è attivo */
+.home,
+.about-me,
+.progetti,
+.contatti {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.dati-anagrafici,
+.info-curriculum {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/*Desktop: snap forte */
 @media (min-width: 1024px) {
   html, body {
     scroll-snap-type: y mandatory;
   }
 }
 
-/* 📱 Mobile: snap morbido */
+/*Mobile: snap morbido */
 @media (max-width: 1023px) {
   html, body {
     scroll-snap-type: y proximity;
