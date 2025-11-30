@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+:root {
+  --header-height: 2.6rem;  /* puoi poi aggiustare a occhio */
+}
+
 html, body {
   scroll-behavior: smooth;
   color: black;
@@ -90,7 +94,7 @@ html, body {
     z-index: 10; /* Gli altri elementi hanno un z-index più alto per restare sopra */
 }
   
-  .header {
+  /* .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -101,7 +105,26 @@ html, body {
     background-color: #f7f7f7;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    z-index: 100; /* deve stare sopra gli altri */
+    z-index: 100; /* deve stare sopra gli altri 
+    font-size: 1rem;
+  } */
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    height: var(--header-height);      /* 👈 altezza fissa */
+    display: flex;
+    align-items: center;               /* centra verticalmente il testo */
+    justify-content: space-between;
+
+    padding: 0 1rem;                   /* solo padding orizzontale */
+    background-color: #f7f7f7;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    z-index: 100;
     font-size: 1rem;
   }
 
@@ -258,6 +281,15 @@ html, body {
   visibility: visible;      /* sempre visibile */
 }
 
+.overlay-hobbies,
+.overlay-hobbies * {
+  -webkit-user-select: none;    /* iOS Safari */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-touch-callout: none;  /* niente popup "Copia/Condividi" */
+}
 
 .dati-anagrafici {
     position: relative;
@@ -1021,6 +1053,15 @@ html, body {
 
 /* Mobile (fino a 768px) */
 @media (max-width: 768px) {
+
+    html, body {
+      scroll-snap-type: y mandatory;
+      scroll-padding-top: 0rem;
+    }
+
+    :root {
+      --header-height: 2.4rem; /* esempio, se vuoi un header un filo più basso */
+    }
 
     .home {
       height: 100svh;
