@@ -57,50 +57,60 @@ Promise.all([
   });
 
 window.addEventListener("DOMContentLoaded", () => {
-    const loader = document.getElementById('loader');
-    const hash = window.location.hash;
-    const isHashExcluded = hash === "#progetti" || hash === "#about-me";
+  const loader = document.getElementById('loader');
+  const hash = window.location.hash;
+  const isHashExcluded = hash === "#progetti" || hash === "#about-me";
 
-    // Se l'utente è alla prima visita E NON sta atterrando su #progetti
-    if (!isHashExcluded) {
-      const squares1 = document.querySelector('.square1');
-      const squares2 = document.querySelector('.square2');
-      const squares3 = document.querySelector('.square3');
+  // tutti i contenuti principali della pagina home
+  const mainSections = document.querySelectorAll('.home, .about-me, .progetti, .contatti');
+
+  function mostraContenuti() {
+    mainSections.forEach(sec => {
+      sec.style.opacity = '1';
+    });
+  }
+
+  if (!isHashExcluded) {
+    const squares1 = document.querySelector('.square1');
+    const squares2 = document.querySelector('.square2');
+    const squares3 = document.querySelector('.square3');
+
+    setTimeout(() => {
+      squares1.style.backgroundColor = '#ff5c00';
+      squares2.style.backgroundColor = 'black';
+      squares3.style.backgroundColor = 'black';
+    }, 500);
+
+    setTimeout(() => {
+      squares1.style.backgroundColor = '#ff5c00';
+      squares2.style.backgroundColor = '#ff5c00';
+      squares3.style.backgroundColor = 'black';
+    }, 1000);
+
+    setTimeout(() => {
+      squares1.style.backgroundColor = '#ff5c00';
+      squares2.style.backgroundColor = '#ff5c00';
+      squares3.style.backgroundColor = '#ff5c00';
+    }, 1500);
+
+    // Nascondi loader dopo 2 secondi e mostra i contenuti
+    setTimeout(() => {
+      loader.style.transition = 'opacity 0.5s ease';
+      loader.style.opacity = '0';
 
       setTimeout(() => {
-          squares1.style.backgroundColor = '#ff5c00';
-          squares2.style.backgroundColor = 'black';
-          squares3.style.backgroundColor = 'black';
+        loader.style.display = 'none';
+        mostraContenuti(); // 👈 qui rendiamo visibile tutto
       }, 500);
+    }, 2000);
 
-      setTimeout(() => {
-          squares1.style.backgroundColor = '#ff5c00';
-          squares2.style.backgroundColor = '#ff5c00';
-          squares3.style.backgroundColor = 'black';
-      }, 1000);
-
-      setTimeout(() => {
-          squares1.style.backgroundColor = '#ff5c00';
-          squares2.style.backgroundColor = '#ff5c00';
-          squares3.style.backgroundColor = '#ff5c00';
-      }, 1500);
-
-      // Nascondi loader dopo 2 secondi
-      setTimeout(() => {
-          loader.style.opacity = '0';
-          loader.style.transition = 'opacity 0.5s ease';
-          setTimeout(() => {
-              loader.style.display = 'none';
-          }, 500);
-      }, 2000);
-
-      localStorage.setItem("visited", "true");
-    } else {
-      // Nascondi subito il loader
-      loader.style.display = 'none';
-    }
-  });
-
+    localStorage.setItem("visited", "true");
+  } else {
+    // se atterro direttamente su #progetti o #about-me:
+    loader.style.display = 'none';
+    mostraContenuti(); // contenuti subito visibili ma già caricati sotto
+  }
+});
 
 
 const revealImg = document.querySelector('.image-reveal img');
