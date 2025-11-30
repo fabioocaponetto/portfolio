@@ -545,3 +545,24 @@ if (closeHobbiesOverlayBtn) {
     closeHobbiesOverlayBtn.style.color = 'white';
   });
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+(function () {
+    const baseURL = "https://fabioocaponetto.github.io/portfolio/index.html";
+
+    // rileva se questo caricamento è un reload
+    let isReload = false;
+
+    if (performance.getEntriesByType) {
+      const nav = performance.getEntriesByType("navigation")[0];
+      if (nav && nav.type === "reload") isReload = true;
+    } else if (performance.navigation) {
+      isReload = performance.navigation.type === 1; // legacy
+    }
+
+    // se è un reload e c'è un hash → vai all'index pulito
+    if (isReload && window.location.hash) {
+      window.location.href = baseURL;
+    }
+  })();
