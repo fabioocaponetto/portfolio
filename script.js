@@ -163,17 +163,6 @@ buttons.forEach(button => {
   });
 });
 
-// document.querySelectorAll('#button').forEach(btn => {
-//     btn.addEventListener('click', () => {
-//       const label = btn.getAttribute('data-label');
-//       const targetSection = document.querySelector(`div[data-label="${label}"]`);
-
-//       if (targetSection) {
-//         targetSection.scrollIntoView({ behavior: 'smooth' });
-//       }
-//     });
-// });
-
 document.querySelectorAll('#button').forEach(btn => {
   btn.addEventListener('click', () => {
     const label = btn.getAttribute('data-label');
@@ -184,123 +173,6 @@ document.querySelectorAll('#button').forEach(btn => {
     }
   });
 });
-
-
-//----------------------------------------------------------------------------------------------------------------------------------------
-
-
-// const aboutMe = document.querySelector('.about-me');
-// const moreInfo = document.querySelector('.more-info'); // forse NON esiste più, quindi lo proteggiamo
-// const hobbies = document.querySelector('.hobbies');     // idem
-
-// const overlayHobbies = document.querySelector('.about-me .overlay-hobbies');
-// const overlayHobbiesContent = document.querySelector('.about-me .overlay-hobbies-content');
-// const closeHobbiesOverlay = document.querySelector('#close-hobbies-overlay');
-
-// // blocca scroll
-// function disableScroll() {
-//     document.body.style.overflow = 'hidden';
-// }
-
-// // riabilita scroll
-// function enableScroll() {
-//     document.body.style.overflow = '';
-// }
-
-// // 🔹 Funzione riutilizzabile per aprire overlay hobbies
-// function openHobbiesOverlay() {
-//     overlayHobbies.style.visibility = "visible";
-//     overlayHobbies.classList.add('active');
-//     disableScroll();
-
-//     setTimeout(() => {
-//         overlayHobbiesContent.style.visibility = "visible";
-//     }, 300);
-// }
-
-// document.querySelectorAll('a[href="#about-me"]').forEach(link => {
-//   link.addEventListener('click', () => {
-//     setTimeout(() => {
-//       openHobbiesOverlay();
-//     }, 600);
-//   });
-// });
-
-// // 🔹 Se more-info esiste ancora, fai aprire il curriculum
-// if (moreInfo) {
-//     moreInfo.addEventListener('click', () => {
-//         window.location.href = 'dettagli/curriculum.html';
-//     });
-// }
-
-// // 🔹 Se hobbies esiste ancora (anche se la sezione è nascosta), apri overlay manualmente
-// if (hobbies) {
-//     hobbies.addEventListener('click', () => {
-//         aboutMe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-//         openHobbiesOverlay();
-//     });
-// }
-
-// // 🔹 Chiudi overlay hobbies
-// if (closeHobbiesOverlay) {
-//     closeHobbiesOverlay.addEventListener('click', () => {
-//         overlayHobbiesContent.style.visibility = "hidden";
-//         overlayHobbies.style.visibility = "hidden";
-//         overlayHobbies.classList.remove('active');
-//         enableScroll();
-//     });
-// }
-
-
-// const aboutMe = document.querySelector('.about-me');
-// const moreInfo = document.querySelector('.more-info');
-// const hobbies = document.querySelector('.hobbies');
-
-// const overlay = document.querySelector('.about-me .overlay');
-// const overlayContent = document.querySelector('.overlay-content');
-
-// const overlayHobbies = document.querySelector('.about-me .overlay-hobbies');
-// const overlayHobbiesContent = document.querySelector('.about-me .overlay-hobbies-content');
-
-// const closeOverlay = document.querySelector('#close-overlay');
-// const closeHobbiesOverlay = document.querySelector('#close-hobbies-overlay');
-
-// //blocca scroll
-// function disableScroll() {
-//     document.body.style.overflow = 'hidden';
-// }
-  
-// //riabilita scroll
-// function enableScroll() {
-//     document.body.style.overflow = '';
-// }
-
-// moreInfo.addEventListener('click', (e) => {
-//   e.preventDefault(); // se è un link <a>, evita comportamento di default
-//   window.location.href = 'dettagli/curriculum.html';
-// });
-
-// // Mostra overlay "Hobbies"
-// hobbies.addEventListener('click', (e) => {
-//   e.stopPropagation();
-//   aboutMe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-//   overlayHobbies.style.visibility = "visible";
-//   overlayHobbies.classList.add('active');
-//   disableScroll();
-
-//   setTimeout(() => {
-//     overlayHobbiesContent.style.visibility = "visible";
-//   }, 500);
-// });
-
-// // Chiudi overlay "Hobbies"
-// closeHobbiesOverlay.addEventListener('click', () => {
-//   overlayHobbiesContent.style.visibility = "hidden";
-//   overlayHobbies.style.visibility = "hidden";
-//   overlayHobbies.classList.remove('active');
-//   enableScroll();
-// });
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -635,23 +507,12 @@ window.addEventListener("load", () => {
     }
   }
 
-  // if (window.location.hash === "#about-me") {
-  //   openHobbiesOverlay();
-  // }
+  if (!window.location.hash) {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }
 });
 
-// document.addEventListener("keydown", function(e) {
-//   if (e.code === "Space") {
-//     const overlayVisible = document.querySelector('.overlay-hobbies').style.visibility === "visible"
-//     if (overlayVisible) {
-//       e.preventDefault();
-//     }
-//   }
-// });
- 
-
-// ------------------------------------------------------------------------
-// CLICK SU [INFO CURRICULUM] → APRI curriculum.html
+//----------------------------------------------------------------------------------------------------------------------------------------
 
 const closeHobbiesOverlayBtn = document.getElementById('close-hobbies-overlay');
 
