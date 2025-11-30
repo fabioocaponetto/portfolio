@@ -144,39 +144,50 @@
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
-    const loader = document.getElementById('loader');
+      const loader = document.getElementById('loader');
 
       const squares1 = document.querySelector('.square1');
       const squares2 = document.querySelector('.square2');
       const squares3 = document.querySelector('.square3');
 
+      // sezioni del curriculum da mostrare dopo il loader
+      const currSections = document.querySelectorAll('.dati-anagrafici, .info-curriculum');
+
+      function mostraCurriculum() {
+        currSections.forEach(sec => {
+          sec.style.opacity = '1';
+        });
+      }
+
       setTimeout(() => {
-          squares1.style.backgroundColor = '#1f18c0';
-          squares2.style.backgroundColor = 'black';
-          squares3.style.backgroundColor = 'black';
+        squares1.style.backgroundColor = '#1f18c0';
+        squares2.style.backgroundColor = 'black';
+        squares3.style.backgroundColor = 'black';
       }, 500);
 
       setTimeout(() => {
-          squares1.style.backgroundColor = '#1f18c0';
-          squares2.style.backgroundColor = '#1f18c0';
-          squares3.style.backgroundColor = 'black';
+        squares1.style.backgroundColor = '#1f18c0';
+        squares2.style.backgroundColor = '#1f18c0';
+        squares3.style.backgroundColor = 'black';
       }, 1000);
 
       setTimeout(() => {
-          squares1.style.backgroundColor = '#1f18c0';
-          squares2.style.backgroundColor = '#1f18c0';
-          squares3.style.backgroundColor = '#1f18c0';
+        squares1.style.backgroundColor = '#1f18c0';
+        squares2.style.backgroundColor = '#1f18c0';
+        squares3.style.backgroundColor = '#1f18c0';
       }, 1500);
 
-      // Nascondi loader dopo 2 secondi
+      // Nascondi loader dopo 2 secondi e mostra i contenuti
       setTimeout(() => {
-          loader.style.opacity = '0';
-          loader.style.transition = 'opacity 0.5s ease';
-          setTimeout(() => {
-              loader.style.display = 'none';
-          }, 500);
-      }, 2000);  
-  });
+        loader.style.transition = 'opacity 0.5s ease';
+        loader.style.opacity = '0';
+
+        setTimeout(() => {
+          loader.style.display = 'none';
+          mostraCurriculum(); // 👈 qui si accendono i contenuti
+        }, 500);
+      }, 2000);
+    });
 
 
     document.querySelector("#header-text").addEventListener("click", () => {
