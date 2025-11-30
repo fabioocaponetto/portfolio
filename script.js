@@ -506,10 +506,6 @@ window.addEventListener("load", () => {
       el.scrollIntoView({ behavior: "auto", block: "start" }); // forza lo scroll in top 0
     }
   }
-
-  if (!window.location.hash) {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }
 });
 
 //----------------------------------------------------------------------------------------------------------------------------------------
