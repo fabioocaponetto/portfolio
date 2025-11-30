@@ -163,68 +163,144 @@ buttons.forEach(button => {
   });
 });
 
-document.querySelectorAll('#button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const label = btn.getAttribute('data-label');
-      const targetSection = document.querySelector(`div[data-label="${label}"]`);
+// document.querySelectorAll('#button').forEach(btn => {
+//     btn.addEventListener('click', () => {
+//       const label = btn.getAttribute('data-label');
+//       const targetSection = document.querySelector(`div[data-label="${label}"]`);
 
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+//       if (targetSection) {
+//         targetSection.scrollIntoView({ behavior: 'smooth' });
+//       }
+//     });
+// });
+
+document.querySelectorAll('#button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const label = btn.getAttribute('data-label');
+    const targetSection = document.querySelector(`div[data-label="${label}"]`);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
-const aboutMe = document.querySelector('.about-me');
-const moreInfo = document.querySelector('.more-info');
-const hobbies = document.querySelector('.hobbies');
 
-const overlay = document.querySelector('.about-me .overlay');
-const overlayContent = document.querySelector('.overlay-content');
+// const aboutMe = document.querySelector('.about-me');
+// const moreInfo = document.querySelector('.more-info'); // forse NON esiste più, quindi lo proteggiamo
+// const hobbies = document.querySelector('.hobbies');     // idem
 
-const overlayHobbies = document.querySelector('.about-me .overlay-hobbies');
-const overlayHobbiesContent = document.querySelector('.about-me .overlay-hobbies-content');
+// const overlayHobbies = document.querySelector('.about-me .overlay-hobbies');
+// const overlayHobbiesContent = document.querySelector('.about-me .overlay-hobbies-content');
+// const closeHobbiesOverlay = document.querySelector('#close-hobbies-overlay');
 
-const closeOverlay = document.querySelector('#close-overlay');
-const closeHobbiesOverlay = document.querySelector('#close-hobbies-overlay');
+// // blocca scroll
+// function disableScroll() {
+//     document.body.style.overflow = 'hidden';
+// }
 
-//blocca scroll
-function disableScroll() {
-    document.body.style.overflow = 'hidden';
-}
+// // riabilita scroll
+// function enableScroll() {
+//     document.body.style.overflow = '';
+// }
+
+// // 🔹 Funzione riutilizzabile per aprire overlay hobbies
+// function openHobbiesOverlay() {
+//     overlayHobbies.style.visibility = "visible";
+//     overlayHobbies.classList.add('active');
+//     disableScroll();
+
+//     setTimeout(() => {
+//         overlayHobbiesContent.style.visibility = "visible";
+//     }, 300);
+// }
+
+// document.querySelectorAll('a[href="#about-me"]').forEach(link => {
+//   link.addEventListener('click', () => {
+//     setTimeout(() => {
+//       openHobbiesOverlay();
+//     }, 600);
+//   });
+// });
+
+// // 🔹 Se more-info esiste ancora, fai aprire il curriculum
+// if (moreInfo) {
+//     moreInfo.addEventListener('click', () => {
+//         window.location.href = 'dettagli/curriculum.html';
+//     });
+// }
+
+// // 🔹 Se hobbies esiste ancora (anche se la sezione è nascosta), apri overlay manualmente
+// if (hobbies) {
+//     hobbies.addEventListener('click', () => {
+//         aboutMe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//         openHobbiesOverlay();
+//     });
+// }
+
+// // 🔹 Chiudi overlay hobbies
+// if (closeHobbiesOverlay) {
+//     closeHobbiesOverlay.addEventListener('click', () => {
+//         overlayHobbiesContent.style.visibility = "hidden";
+//         overlayHobbies.style.visibility = "hidden";
+//         overlayHobbies.classList.remove('active');
+//         enableScroll();
+//     });
+// }
+
+
+// const aboutMe = document.querySelector('.about-me');
+// const moreInfo = document.querySelector('.more-info');
+// const hobbies = document.querySelector('.hobbies');
+
+// const overlay = document.querySelector('.about-me .overlay');
+// const overlayContent = document.querySelector('.overlay-content');
+
+// const overlayHobbies = document.querySelector('.about-me .overlay-hobbies');
+// const overlayHobbiesContent = document.querySelector('.about-me .overlay-hobbies-content');
+
+// const closeOverlay = document.querySelector('#close-overlay');
+// const closeHobbiesOverlay = document.querySelector('#close-hobbies-overlay');
+
+// //blocca scroll
+// function disableScroll() {
+//     document.body.style.overflow = 'hidden';
+// }
   
-//riabilita scroll
-function enableScroll() {
-    document.body.style.overflow = '';
-}
+// //riabilita scroll
+// function enableScroll() {
+//     document.body.style.overflow = '';
+// }
 
-moreInfo.addEventListener('click', (e) => {
-  e.preventDefault(); // se è un link <a>, evita comportamento di default
-  window.location.href = 'dettagli/curriculum.html';
-});
+// moreInfo.addEventListener('click', (e) => {
+//   e.preventDefault(); // se è un link <a>, evita comportamento di default
+//   window.location.href = 'dettagli/curriculum.html';
+// });
 
-// Mostra overlay "Hobbies"
-hobbies.addEventListener('click', (e) => {
-  e.stopPropagation();
-  aboutMe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// // Mostra overlay "Hobbies"
+// hobbies.addEventListener('click', (e) => {
+//   e.stopPropagation();
+//   aboutMe.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  overlayHobbies.style.visibility = "visible";
-  overlayHobbies.classList.add('active');
-  disableScroll();
+//   overlayHobbies.style.visibility = "visible";
+//   overlayHobbies.classList.add('active');
+//   disableScroll();
 
-  setTimeout(() => {
-    overlayHobbiesContent.style.visibility = "visible";
-  }, 500);
-});
+//   setTimeout(() => {
+//     overlayHobbiesContent.style.visibility = "visible";
+//   }, 500);
+// });
 
-// Chiudi overlay "Hobbies"
-closeHobbiesOverlay.addEventListener('click', () => {
-  overlayHobbiesContent.style.visibility = "hidden";
-  overlayHobbies.style.visibility = "hidden";
-  overlayHobbies.classList.remove('active');
-  enableScroll();
-});
+// // Chiudi overlay "Hobbies"
+// closeHobbiesOverlay.addEventListener('click', () => {
+//   overlayHobbiesContent.style.visibility = "hidden";
+//   overlayHobbies.style.visibility = "hidden";
+//   overlayHobbies.classList.remove('active');
+//   enableScroll();
+// });
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -233,41 +309,102 @@ const video = document.getElementById("video-hobbies");
 const istrText = document.querySelector("#istr-video span");
 let spacePressed = false;
 
+const overlayHobbies = document.querySelector('.overlay-hobbies');
+
+function isOverlayVisible() {
+  if (!overlayHobbies) return false;
+
+  const rect = overlayHobbies.getBoundingClientRect();
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+
+  const visibleHeight = Math.min(rect.bottom, vh) - Math.max(rect.top, 0);
+
+  // la consideriamo "visibile" se almeno il 30% è in viewport
+  return visibleHeight > vh * 0.5;
+}
+
 if (isSmallScreen) {
-    // Cambia il testo per i dispositivi touch
-    istrText.innerHTML = 'TIENI PREMUTO<br>E ALZA IL VOLUME';
+  // Testo per mobile
+  istrText.innerHTML = 'TIENI PREMUTO<br>E ALZA IL VOLUME';
 
-    // Gestione touch solo su #video-hobbies
-    video.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        video.play();
-        music.play();
-    }, { passive: false });
+  let startX = 0;
+  let startY = 0;
+  let isScrollingLike = false;
+  const MOVE_THRESHOLD = 20; // px: oltre questo lo consideriamo scroll
 
-    video.addEventListener("touchend", (e) => {
-        e.preventDefault();
+  function handleTouchStart(e) {
+    if (e.touches.length !== 1) return;
+
+    const t = e.touches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+    isScrollingLike = false;
+
+    // 👉 appena appoggia il dito: parte video + musica
+    video.play();
+    music.play();
+  }
+
+  function handleTouchMove(e) {
+    if (e.touches.length !== 1) return;
+    if (isScrollingLike) return;
+
+    const t = e.touches[0];
+    const dx = Math.abs(t.clientX - startX);
+    const dy = Math.abs(t.clientY - startY);
+
+    if (dx > MOVE_THRESHOLD || dy > MOVE_THRESHOLD) {
+      // 👉 sta chiaramente scrollando: fermiamo audio/video
+      isScrollingLike = true;
+      if (!video.paused) {
         video.pause();
         music.pause();
-    }, { passive: false });
-} else {
-    // Gestione tastiera (desktop)
-    document.addEventListener("keydown", (event) => {
-        if (event.code === "Space" && !spacePressed) {
-            event.preventDefault();
-            spacePressed = true;
-            video.play();
-            music.play();
-        }
-    });
+      }
+    }
+  }
 
-    document.addEventListener("keyup", (event) => {
-        if (event.code === "Space") {
-            spacePressed = false;
-            video.pause();
-            music.pause();
-        }
-    });
+  function handleTouchEndOrCancel() {
+    // 👉 appena solleva il dito (o il touch viene cancellato): STOP sempre
+    if (!video.paused) {
+      video.pause();
+      music.pause();
+    }
+  }
+
+  video.addEventListener("touchstart", handleTouchStart, { passive: true });
+  video.addEventListener("touchmove", handleTouchMove, { passive: true });
+  video.addEventListener("touchend", handleTouchEndOrCancel, { passive: true });
+  video.addEventListener("touchcancel", handleTouchEndOrCancel, { passive: true });
+
+} else {
+  // DESKTOP: gestione tastiera (spacebar)
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Space") {
+      event.preventDefault(); // niente scroll mai
+
+      if (!isOverlayVisible()) return;
+
+      if (!spacePressed) {
+        spacePressed = true;
+        video.play();
+        music.play();
+      }
+    }
+  });
+
+  document.addEventListener("keyup", (event) => {
+    if (event.code === "Space") {
+      event.preventDefault();
+
+      if (!isOverlayVisible()) return;
+
+      spacePressed = false;
+      video.pause();
+      music.pause();
+    }
+  });
 }
+
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -497,4 +634,47 @@ window.addEventListener("load", () => {
       el.scrollIntoView({ behavior: "auto", block: "start" }); // forza lo scroll in top 0
     }
   }
+
+  // if (window.location.hash === "#about-me") {
+  //   openHobbiesOverlay();
+  // }
 });
+
+// document.addEventListener("keydown", function(e) {
+//   if (e.code === "Space") {
+//     const overlayVisible = document.querySelector('.overlay-hobbies').style.visibility === "visible"
+//     if (overlayVisible) {
+//       e.preventDefault();
+//     }
+//   }
+// });
+ 
+
+// ------------------------------------------------------------------------
+// CLICK SU [INFO CURRICULUM] → APRI curriculum.html
+
+const closeHobbiesOverlayBtn = document.getElementById('close-hobbies-overlay');
+
+if (closeHobbiesOverlayBtn) {
+  closeHobbiesOverlayBtn.addEventListener('click', () => {
+    // opzionale: ferma audio/video prima del redirect
+    if (video && !video.paused) video.pause();
+    if (music && !music.paused) music.pause();
+
+    // vai alla pagina curriculum.html nella cartella "dettagli"
+    window.location.href = 'dettagli/curriculum.html';
+  });
+}
+
+if (closeHobbiesOverlayBtn) {
+
+  closeHobbiesOverlayBtn.addEventListener('mouseenter', () => {
+    closeHobbiesOverlayBtn.style.backgroundColor = 'white';
+    closeHobbiesOverlayBtn.style.color = 'blue';
+  });
+
+  closeHobbiesOverlayBtn.addEventListener('mouseleave', () => {
+    closeHobbiesOverlayBtn.style.backgroundColor = 'blue';
+    closeHobbiesOverlayBtn.style.color = 'white';
+  });
+}
