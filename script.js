@@ -193,6 +193,14 @@ let spacePressed = false;
 
 const overlayHobbies = document.querySelector('.overlay-hobbies');
 
+if (video) {
+  video.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  });
+}
+
 function isOverlayVisible() {
   if (!overlayHobbies) return false;
 
